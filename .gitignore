@@ -1,0 +1,13 @@
+# Ren'Py-specific
+*.rpyc
+*.rpa
+*.save
+*.saves
+*.autosave
+*.tmp
+*.bak
+persistent
+log.txt
+renpy-*
+game/saves/
+game/cache/
