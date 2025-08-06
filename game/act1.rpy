@@ -3,6 +3,9 @@ define d = Character("Don Marciano")
 define l = Character("Lazaro")
 define s = Character("Servant")
 
+# Route Variable
+default journal_memory = "none"
+
 # Transition
 define slow_fade = Fade(0.5, 0.0, 0.3)  # 3 seconds fade 
 
@@ -42,8 +45,13 @@ label act1_start:
 
     menu:
         "Patawarin mo sila, Panginoon.":
+            $ journal_memory = "forgiveness"
         "Hanggang kailan ang sakit na ito?":
+            $ journal_memory = "suffering"
         "Bigyan mo pa po ako ng lakas.":
+            $ journal_memory = "faith"
+        "...":
+            $ journal_memory = "childhood"
 
     "At araw-araw, sila'y nagkikita... ngunit kailanman, hindi sila nagtagpo."
 
