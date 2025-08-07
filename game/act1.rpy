@@ -1,14 +1,3 @@
-# Characters
-define d = Character("Don Marciano")
-define l = Character("Lazaro")
-define s = Character("Servant")
-
-# Route Variable
-default journal_memory = "none"
-
-# Transition
-define slow_fade = Fade(0.5, 0.0, 0.3)  # 3 seconds fade 
-
 label act1_start:
 
     # Scene 1: Inside the Mansion (Don Marciano POV)
