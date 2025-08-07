@@ -14,8 +14,6 @@ define slow_fade = Fade(0.5, 0.0, 0.3)  # 3 seconds fade
 
 label start:
 
-    scene bg room
-
     # OPENING PROLOGUE  
     
 
