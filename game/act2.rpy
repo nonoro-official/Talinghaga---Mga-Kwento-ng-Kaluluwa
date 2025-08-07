@@ -1,8 +1,3 @@
-# Characters
-define d = Character("Don Marciano")
-define l = Character("Lazaro")
-define n = Character("Narrator", what_italic=True)
-
 # Image declarations
 image donmarciano shocked = "images/characters/richman/shocked.png"
 image lazarus distressed = "images/characters/lazarus/distressed.png"
@@ -17,14 +12,14 @@ label act2_start:
     show lazarus distressed with dissolve
     l "Panginoon... kung ito na po ang wakas, ako'y handa."
     l "Sa gutom at kirot, di Mo ako iniwan."
-    l "Nawa'y matagpuan Ko ang Inyong liwanag."
+    l "Nawa'y matagpuan ko ang Inyong liwanag."
 
     # Angelic transition
     play music "audio/act2/act2_angelchoirmusic.ogg"
     pause 2
     hide lazarus with dissolve
 
-    n "At siya'y kinuha ng mga anghel at dinala sa piling ni Abraham."
+    "{i}At siya'y kinuha ng mga anghel at dinala sa piling ni Abraham.{/i}"
 
     stop music fadeout 2.0
     scene black with fade
@@ -45,7 +40,7 @@ label act2_start:
     pause 1
     hide donmarciano with dissolve
 
-    n "At ang mayamang lalaki'y namatay rin, at siya'y inilibing."
+    "{i}At ang mayamang lalaki'y namatay rin, at siya'y inilibing.{/i}"
 
     scene black with fade
     pause 1

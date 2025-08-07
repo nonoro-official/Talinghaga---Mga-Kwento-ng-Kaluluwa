@@ -1,11 +1,10 @@
-# Characters
-define l = Character("Lazaro")
 define a = Character("Anghel", what_italic=True)
 
 # Image declarations
 image lazarus neutral = "images/characters/lazarus/neutral.png"
 image lazarus distressed = "images/characters/lazarus/distressed.png"
 
+# ACT 4 START
 label act4_start:
 
     scene black with fade
@@ -24,7 +23,6 @@ label act4_start:
         jump memory_childhood
     else:
         jump act4_cont
-
 
 label memory_forgiveness:
     play music "audio/act4/act4_nostalgiamemorymusic.ogg"

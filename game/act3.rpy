@@ -1,8 +1,5 @@
 # Characters
-define d = Character("Don Marciano")
-define l = Character("Lazaro")
 define a = Character("Abraham")
-define n = Character("Narrator", what_italic=True)
 
 # Image declarations
 image donmarciano shocked = "images/characters/richman/shocked.png"
@@ -30,6 +27,7 @@ transform right_dim:
     yalign 1.0
     alpha 0.5
 
+# ACT 3 START
 label act3_start:
 
     scene black with fade

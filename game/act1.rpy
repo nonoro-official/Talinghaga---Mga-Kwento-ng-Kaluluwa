@@ -1,13 +1,5 @@
 # Characters
-define d = Character("Don Marciano")
-define l = Character("Lazaro")
 define s = Character("Servant")
-
-# Route Variable
-default journal_memory = "none"
-
-# Transitions
-define slow_fade = Fade(0.5, 0.0, 0.3)
 
 # Image declarations
 image donmarciano smug = "images/characters/richman/smug.png"
@@ -17,6 +9,7 @@ image donmarciano neutral = "images/characters/richman/neutral.png"
 image lazarus distressed = "images/characters/lazarus/distressed.png"
 image lazarus neutral = "images/characters/lazarus/neutral.png"
 
+# ACT 1 START
 label act1_start:
 
     # Scene 1: Inside the Mansion (Don Marciano POV)
@@ -64,7 +57,7 @@ label act1_start:
     stop music fadeout 1.5
     scene black with fade
 
-    "At araw-araw, sila'y nagkikita... ngunit kailanman, hindi sila nagtagpo."
-    "Ngunit darating ang araw — ang huling araw — na babaligtad ang mundo."
+    "{i}At araw-araw, sila'y nagkikita... ngunit kailanman, hindi sila nagtagpo.{/i}"
+    "{i}Ngunit darating ang araw — ang huling araw — na babaligtad ang mundo.{/i}"
 
     jump act2_start
