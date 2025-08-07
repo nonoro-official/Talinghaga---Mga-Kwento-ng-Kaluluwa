@@ -5,6 +5,10 @@ define s = Character("Servant")
 
 # Route Variable
 default journal_memory = "none"
+init python:
+    renpy.music.set_volume(1.0, delay=0, channel='music')
+    renpy.music.set_volume(1.0, delay=0, channel='sound')
+
 
 # Transition
 define slow_fade = Fade(0.5, 0.0, 0.3)  # 3 seconds fade 
