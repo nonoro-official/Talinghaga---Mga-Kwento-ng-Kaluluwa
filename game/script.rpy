@@ -5,6 +5,10 @@
 
 define e = Character("Eileen")
 
+init python:
+    renpy.music.set_volume(1.0, delay=0, channel='music')
+    renpy.music.set_volume(1.0, delay=0, channel='sound')
+
 
 # The game starts here.
 
