@@ -3,7 +3,7 @@ define d = Character("Don Marciano")
 define l = Character("Lazaro")
 define n = Character("Narrator", what_italic=True)
 
-# Image declarations (if not already in shared file)
+# Image declarations
 image donmarciano shocked = "images/characters/richman/shocked.png"
 image lazarus distressed = "images/characters/lazarus/distressed.png"
 
