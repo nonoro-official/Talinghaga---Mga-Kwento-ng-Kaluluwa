@@ -56,7 +56,7 @@ screen memory_journal():
 
             # Compute count for interpolation safely
             $ found_count = len(persistent.found_journal)
-            text "{size=20}{color=#ccc}%d out of %d entries found{/color}{/size}" % (found_count, len(journal_entries)) xalign 0.5
+            text "{size=20}{color=#ccc}%d sa %d na entry ang natagpuan{/color}{/size}" % (found_count, len(journal_entries)) xalign 0.5
 
             null height 8
 
@@ -91,25 +91,29 @@ screen journal_entry_viewer(entry):
         padding (16, 16)
         xalign 0.5
         yalign 0.5
-        xmaximum 900
-        ymaximum 700
+        xmaximum 600     # narrower max width for smaller layout
+        ymaximum 500     # smaller max height too
         vbox:
-            spacing 10
+            spacing 8
             xalign 0.5
             yalign 0.5
 
-            text entry["title"] size 30 color "#fff" xalign 0.5
-            null height 6
+            text entry["title"] size 22 color "#fff" xalign 0.5   # smaller font size
+
+            null height 4
+
             if entry["image"]:
-                add entry["image"] xalign 0.5
-            null height 8
+                add entry["image"] xalign 0.5 zoom 0.5   # scale image to 50%
+
+            null height 6
+
             hbox:
                 spacing 8
                 xalign 0.5
-                textbutton "Back to Journal" action [Hide("journal_entry_viewer", transition=Fade(0.5)), Show("memory_journal", transition=Fade(0.5))]
-                textbutton "Close" action Hide("journal_entry_viewer", transition=Fade(0.5))
-        
+                textbutton "Balik sa Journal" action [Hide("journal_entry_viewer", transition=Fade(0.5)), Show("memory_journal", transition=Fade(0.5))]
+
             key "mouseup_1" action [Hide("journal_entry_viewer"), Show("memory_journal")]
+
 
 label demoend:
     hide window
