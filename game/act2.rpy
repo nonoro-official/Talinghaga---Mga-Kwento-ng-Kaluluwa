@@ -2,7 +2,7 @@
 image donmarciano desperate = "images/characters/richman/desperate.png"
 image lazarus distressed = "images/characters/lazarus/distressed.png"
 
-image bg lazarusdeath = "images/cg/lazarusdeathcg.png"
+image bg lazarusdeath = "images/cgs/lazarusdeathcg.png"
 image bg richmanor = "images/bg/richmanor.png"
 image bg hell = "images/bg/hell.png"
 

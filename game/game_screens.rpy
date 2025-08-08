@@ -30,10 +30,10 @@ screen prologue_screen(prologue_text):
 
 # Journal entries data
 default journal_entries = [
-    { "id": "childhood", "title": "Ang Aking Kabataan", "image": "images/memories/childhood_cg.png" },
-    { "id": "suffering", "title": "Ang Aking Pagkakasakit", "image": "images/memories/sickness_cg.png" },
-    { "id": "faith", "title": "Pananalig sa Gitna ng Gutom", "image": "images/memories/faith_cg.png" },
-    { "id": "forgiveness", "title": "Pagpapaumanhin", "image": "images/memories/forgiveness_cg.png" }
+    { "id": "childhood", "title": "Ang Aking Kabataan", "image": "images/cgs/fsyouth.png" },
+    { "id": "suffering", "title": "Ang Aking Pagkakasakit", "image": "images/cgs/fsloss.png" },
+    { "id": "faith", "title": "Pananalig sa Gitna ng Gutom", "image": "images/cgs/fsfaith.png" },
+    { "id": "forgiveness", "title": "Pagpapaumanhin", "image": "images/cgs/fsdeath.png" }
 ]
 
 # Styled journal screen (drawn box, no PNG)
