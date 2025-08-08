@@ -1,53 +1,104 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 23, in script call
+  File "game/script.rpy", line 31, in script call
     call act1_start from act1
-  File "game/act2.rpy", line 40, in script
-    pause 1
-  File "renpy/common/000statements.rpy", line 453, in execute_pause
-    renpy.pause(delay)
-OSError: Couldn't find file 'audio/act2/act2_bodycollapse.ogg'.
+  File "game/act4.rpy", line 20, in script
+    call screen memory_journal
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 28, in execute
+    frame:
+  File "game/game_screens.rpy", line 35, in execute
+    vbox:
+  File "game/game_screens.rpy", line 46, in execute
+    frame:
+  File "game/game_screens.rpy", line 50, in execute
+    vbox:
+  File "game/game_screens.rpy", line 52, in execute
+    for entry in journal_entries:
+  File "game/game_screens.rpy", line 53, in execute
+    if journal_entry_unlocked(entry["id"]):
+  File "game/game_screens.rpy", line 56, in execute
+    text "{entry[\"title\"]} — ???" color "#888"
+NameError: Name '"title"' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 23, in script call
+  File "game/script.rpy", line 31, in script call
     call act1_start from act1
-  File "game/act2.rpy", line 40, in script
-    pause 1
+  File "game/act4.rpy", line 20, in script
+    call screen memory_journal
   File "D:\RenPy\renpy-8.0.3-sdk\renpy\ast.py", line 2232, in execute
     self.call("execute")
   File "D:\RenPy\renpy-8.0.3-sdk\renpy\ast.py", line 2220, in call
     return renpy.statements.call(method, parsed, *args, **kwargs)
   File "D:\RenPy\renpy-8.0.3-sdk\renpy\statements.py", line 281, in call
     return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 453, in execute_pause
-    renpy.pause(delay)
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\exports.py", line 1537, in pause
-    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\exports.py", line 3181, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
   File "D:\RenPy\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 4103, in interact_core
-    renpy.audio.audio.periodic()
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\audio\audio.py", line 1166, in periodic
-    raise_(exc[0], exc[1], exc[2])
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 441, in raise_
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\audio\audio.py", line 1144, in periodic_thread_main
-    periodic_pass()
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\audio\audio.py", line 1086, in periodic_pass
-    c.periodic()
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\audio\audio.py", line 517, in periodic
-    topf = load(filename)
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\audio\audio.py", line 70, in load
-    rv = renpy.loader.load(fn)
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\loader.py", line 820, in load
-    raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'audio/act2/act2_bodycollapse.ogg'.
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
+    callback(self)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 462, in per_interact
+    self.update()
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 28, in execute
+    frame:
+  File "game/game_screens.rpy", line 35, in execute
+    vbox:
+  File "game/game_screens.rpy", line 46, in execute
+    frame:
+  File "game/game_screens.rpy", line 50, in execute
+    vbox:
+  File "game/game_screens.rpy", line 52, in execute
+    for entry in journal_entries:
+  File "game/game_screens.rpy", line 53, in execute
+    if journal_entry_unlocked(entry["id"]):
+  File "game/game_screens.rpy", line 56, in execute
+    text "{entry[\"title\"]} — ???" color "#888"
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\text\text.py", line 1594, in __init__
+    self.set_text(text, scope, substitute)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\text\text.py", line 1712, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\substitutions.py", line 278, in substitute
+    s = formatter.vformat(s, (), kwargs) # type: ignore
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 205, in _vformat
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\substitutions.py", line 168, in get_field
+    obj, arg_used = super(Formatter, self).get_field(field_name, args, kwargs)
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 270, in get_field
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 227, in get_value
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\substitutions.py", line 236, in __getitem__
+    raise NameError("Name '{}' is not defined.".format(key))
+NameError: Name '"title"' is not defined.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.0.3.22090809
 Talinghaga: Mga Kwento ng Kaluluwa 1.0
-Thu Aug  7 22:36:11 2025
+Fri Aug  8 19:50:31 2025

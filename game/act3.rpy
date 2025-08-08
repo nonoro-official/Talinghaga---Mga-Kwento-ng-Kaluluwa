@@ -2,7 +2,7 @@
 define a = Character("Abraham")
 
 # Image declarations
-image donmarciano shocked = "images/characters/richman/shocked.png"
+image donmarciano desperate = "images/characters/richman/desperate.png"
 image lazarus neutral = "images/characters/lazarus/neutral.png"
 image abraham = "images/characters/abraham.png"
 
@@ -33,7 +33,7 @@ label act3_start:
     scene black with fade
     play sound "audio/act3/act3_firesound.ogg"
 
-    show donmarciano shocked at left_dim
+    show donmarciano desperate at left_dim
     show abraham at right_focused
 
     a "Anak, alalahanin mong sa buhay mo, tinanggap mo na ang mabubuting bagay..."
@@ -46,25 +46,25 @@ label act3_start:
     a "Bukod pa rito, may malaking bangin sa pagitan natin."
     a "Hindi pwedeng tumawid ang sinuman mula rito patungo sa inyo, ni mula sa inyo patungo rito."
 
-    show donmarciano shocked at left_focused
+    show donmarciano desperate at left_focused
     show abraham at right_dim
 
     d "Kung gayon, Ama Abraham, ipadala mo na lang si Lazaro sa aking ama’t bahay!"
     d "Mayroon akong limang kapatid."
     d "Paalalahanan mo sila upang hindi rin sila mapunta rito sa kapighatian!"
 
-    show donmarciano shocked at left_dim
+    show donmarciano desperate at left_dim
     show abraham at right_focused
 
     a "Nasa kanila si Moises at ang mga Propeta. Pakinggan nila ang mga iyon."
 
-    show donmarciano shocked at left_focused
+    show donmarciano desperate at left_focused
     show abraham at right_dim
 
     d "Hindi po, Ama Abraham!"
     d "Ngunit kung may isang bumangon mula sa mga patay, sila’y maniniwala!"
 
-    show donmarciano shocked at left_dim
+    show donmarciano desperate at left_dim
     show abraham at right_focused
 
     a "Kung hindi sila makikinig kay Moises at sa mga Propeta..."

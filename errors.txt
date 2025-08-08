@@ -2,9 +2,25 @@
 errors listed below, and try again.
 
 
-File "game/act1.rpy", line 44: choice menuitem expects a non-empty block.
+File "game/act1.rpy", line 46: menu statement expects a non-empty block.
+    menu:
+        ^
+
+File "game/act1.rpy", line 47: expected statement.
     "Patawarin mo sila, Panginoon.":
-                                    ^
+                                   ^
+
+File "game/act1.rpy", line 49: expected statement.
+    "Hanggang kailan ang sakit na ito?":
+                                       ^
+
+File "game/act1.rpy", line 51: expected statement.
+    "Bigyan mo pa po ako ng lakas.":
+                                   ^
+
+File "game/act1.rpy", line 53: expected statement.
+    "...":
+         ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Aug  4 21:03:04 2025
+Fri Aug  8 19:43:01 2025

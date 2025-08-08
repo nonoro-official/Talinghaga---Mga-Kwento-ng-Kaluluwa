@@ -1,5 +1,5 @@
 # Image declarations
-image donmarciano shocked = "images/characters/richman/shocked.png"
+image donmarciano desperate = "images/characters/richman/desperate.png"
 image lazarus distressed = "images/characters/lazarus/distressed.png"
 
 # ACT 2 START
@@ -49,7 +49,7 @@ label act2_start:
     play sound "audio/act2/act2_scaryambience.ogg"
     pause 2
 
-    show donmarciano shocked with dissolve
+    show donmarciano desperate with dissolve
     d "Ama Abraham! Mahabag ka sa akin!"
     d "Ipadala mo si Lazaro upang isawsaw ang dulo ng kanyang daliri sa tubig at palamigin ang aking dila!"
     d "Ako’y pinahihirapan sa apoy na ito!"

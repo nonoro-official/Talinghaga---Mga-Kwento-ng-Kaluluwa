@@ -10,65 +10,90 @@ screen demothx:
 screen credits:
     add "screens/credits.png"
 
+# Journal entries data
+default journal_entries = [
+    { "id": "entry1", "title": "Ang Aking Kabataan", "image": "images/memories/childhood_cg.png" },
+    { "id": "entry2", "title": "Ang Aking Pagkakasakit", "image": "images/memories/sickness_cg.png" },
+    { "id": "entry3", "title": "Pananalig sa Gitna ng Gutom", "image": "images/memories/faith_cg.png" },
+    { "id": "entry4", "title": "Pagpapaumanhin", "image": "images/memories/forgiveness_cg.png" }
+]
+
+# Styled journal screen (drawn box, no PNG)
 screen memory_journal():
+    tag menu
+    modal True
 
-    if not journal_open:
-        add "journal_closed.png"
-        imagebutton:
-            xpos 0.5 ypos 0.5 anchor (0.5, 0.5)
-            idle "journal_closed.png"
-            action SetVariable("journal_open", True)
+    add Solid("#0008")  # semi-transparent overlay
 
-    else:
-        add "journal_open.png"
+    frame:
+        background Solid("#222")
+        xalign 0.5
+        yalign 0.5
+        padding (18, 18)
+        xminimum 760
 
-        # Calculate what to show
-        $ start = journal_page * 2
-        $ end = start + 2
-        $ visible = memory_entries[start:end]
+        vbox:
+            spacing 8
+            text "Memory Journal" size 32 color "#fff" xalign 0.5
 
-        for i, entry in enumerate(visible):
-            if unlocked_memory == entry["id"]:  # show only if it's unlocked
-                textbutton entry["title"]:
-                    xpos 120
-                    ypos 180 + i * 100
-                    style "memory_entry_button"
-                    action [Hide("memory_journal"), Jump("memory_" + entry["id"])]
-            else:
-                text entry["title"] + " (Locked)":
-                    xpos 120
-                    ypos 180 + i * 100
-                    style "memory_locked_style"
+            # Compute count for interpolation safely
+            $ found_count = len(persistent.found_journal)
+            text "{size=20}{color=#ccc}%d out of %d entries found{/color}{/size}" % (found_count, len(journal_entries)) xalign 0.5
 
-        # Arrows
-        if journal_page > 0:
-            imagebutton:
-                xpos 50 ypos 420
-                idle "arrow_left.png"
-                action SetVariable("journal_page", journal_page - 1)
+            null height 8
 
-        if end < len(memory_entries):
-            imagebutton:
-                xpos 700 ypos 420
-                idle "arrow_right.png"
-                action SetVariable("journal_page", journal_page + 1)
+            # Entries list inside a drawn box
+            frame:
+                background Solid("#333")
+                padding (12, 12)
+                xminimum 700
+                vbox:
+                    spacing 6
+                    for entry in journal_entries:
+                        if journal_entry_unlocked(entry["id"]):
+                            textbutton entry["title"] action [Hide("memory_journal"), Show("journal_entry_viewer", entry=entry)]
+                        else:
+                            text "{entry[\"title\"]} — ???" color "#888"
 
-        # Close button
-        textbutton "Close":
-            xpos 700 ypos 60
-            action SetVariable("journal_open", False)
 
-style memory_entry_button is default:
-    size 32
-    color "#ffffff"
-    hover_color "#facc15"  # highlight color on hover
-    underline True
-    bold True
+            null height 8
+            hbox:
+                spacing 10
+                textbutton "Balik" action Return()
 
-style memory_locked_style is default:
-    size 28
-    color "#777777"
-    italic True
+# Entry viewer: show title + cg and allow going back to journal
+screen journal_entry_viewer(entry):
+    tag menu
+    modal True
+    # dark background so CG stands out
+    add Solid("#000C")
+
+    frame:
+        background Solid("#111")
+        padding (16, 16)
+        xalign 0.5
+        yalign 0.5
+        xmaximum 900
+        vbox:
+            spacing 10
+            text entry["title"] size 30 color "#fff" xalign 0.5
+            null height 6
+            if entry["image"]:
+                add entry["image"] xalign 0.5
+            null height 8
+            hbox:
+                spacing 8
+                textbutton "Back to Journal" action [Hide("journal_entry_viewer"), Show("memory_journal")]
+                textbutton "Close" action [Hide("journal_entry_viewer"), Return()]
+
+# # Button style for journal entry
+# style journal_entry_button is default:
+#     background Solid("#444")
+#     padding (10, 10)
+#     xminimum 560
+#     hover_background Solid("#666")
+#     color "#fff"
+#     hover_color "#ff0"
 
 label demoend:
     hide window

@@ -1,7 +1,7 @@
 # Characters
 define s = Character("Servant")
 
-# Image declarations
+# Images
 image donmarciano smug = "images/characters/richman/smug.png"
 image donmarciano shocked = "images/characters/richman/shocked.png"
 image donmarciano neutral = "images/characters/richman/neutral.png"
@@ -52,6 +52,9 @@ label act1_start:
             $ journal_memory = "faith"
         "...":
             $ journal_memory = "childhood"
+
+    # Unlock only the chosen entry
+    $ unlock_journal_entry(journal_memory)
 
     hide lazarus with dissolve
     stop music fadeout 1.5

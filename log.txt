@@ -1,14 +1,14 @@
-Thu Aug  7 22:49:48 2025
+Fri Aug  8 19:46:19 2025
 Windows-10-10.0.19045
 Ren'Py 8.0.3.22090809
  
 
 Bootstrap to the start of init.init took 0.04s
 Early init took 0.00s
-Loader init took 0.04s
-Loading error handling took 0.02s
-Loading script took 0.11s
-Loading save slot metadata. took 0.01s
+Loader init took 0.05s
+Loading error handling took 0.03s
+Loading script took 0.19s
+Loading save slot metadata. took 0.00s
 Loading persistent took 0.00s
 Faled to initialize steam: FileNotFoundError("Could not find module 'D:\\RenPy\\renpy-8.0.3-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
 Running init code took 0.05s
@@ -22,19 +22,19 @@ Initial gc. took 0.02s
 DPI scale factor: 1.250000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.31s
+Creating interface object took 0.36s
 Cleaning stores took 0.00s
-Init translation took 0.02s
+Init translation took 0.03s
 Build styles took 0.00s
 Load screen analysis took 0.02s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.04s
+Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.02s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.11s
+Interface start took 0.12s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -44,5 +44,495 @@ Vendor: "b'NVIDIA Corporation'"
 Renderer: b'NVIDIA GeForce GTX 1650 Ti/PCIe/SSE2'
 Version: b'4.6.0 NVIDIA 566.14'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1729, 972) drawable=(1729, 972)
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
 Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 31, in script call
+    call act1_start from act1
+  File "game/act4.rpy", line 20, in script
+    call screen memory_journal
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\ast.py", line 2232, in execute
+    self.call("execute")
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\exports.py", line 3181, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
+    callback(self)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 462, in per_interact
+    self.update()
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 28, in execute
+    frame:
+  File "game/game_screens.rpy", line 35, in execute
+    vbox:
+  File "game/game_screens.rpy", line 40, in execute
+    $ found_count = len(persistent.found_journal_entries)
+  File "game/game_screens.rpy", line 40, in <module>
+    $ found_count = len(persistent.found_journal_entries)
+TypeError: object of type 'NoneType' has no len()
+
+While running game code:
+  File "game/script.rpy", line 31, in script call
+    call act1_start from act1
+  File "game/act4.rpy", line 20, in script
+    call screen memory_journal
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 28, in execute
+    frame:
+  File "game/game_screens.rpy", line 35, in execute
+    vbox:
+  File "game/game_screens.rpy", line 40, in execute
+    $ found_count = len(persistent.found_journal_entries)
+  File "game/game_screens.rpy", line 40, in <module>
+    $ found_count = len(persistent.found_journal_entries)
+TypeError: object of type 'NoneType' has no len()
+Resetting cache.
+Bootstrap to the start of init.init took 116.23s
+Early init took 0.00s
+Loader init took 0.05s
+Loading error handling took 0.02s
+Loading script took 0.16s
+Loading save slot metadata. took 0.01s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'D:\\RenPy\\renpy-8.0.3-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.03s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Noah Peñaranda\\AppData\\Roaming/RenPy/backups\\Talinghaga - Mga Kwento ng Kaluluwa':
+Dump and make backups. took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.35s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1650 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 566.14'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1738, 978) drawable=(1738, 978)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 31, in script call
+    call act1_start from act1
+  File "game/act4.rpy", line 20, in script
+    call screen memory_journal
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\ast.py", line 2232, in execute
+    self.call("execute")
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\exports.py", line 3181, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
+    callback(self)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 462, in per_interact
+    self.update()
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 28, in execute
+    frame:
+  File "game/game_screens.rpy", line 35, in execute
+    vbox:
+  File "game/game_screens.rpy", line 46, in execute
+    frame:
+  File "game/game_screens.rpy", line 50, in execute
+    vbox:
+  File "game/game_screens.rpy", line 52, in execute
+    for entry in journal_entries:
+  File "game/game_screens.rpy", line 53, in execute
+    if journal_entry_unlocked(entry["id"]):
+  File "game/game_screens.rpy", line 56, in execute
+    text "[entry['title']] — ???" color "#888"
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\text\text.py", line 1594, in __init__
+    self.set_text(text, scope, substitute)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\text\text.py", line 1712, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\substitutions.py", line 278, in substitute
+    s = formatter.vformat(s, (), kwargs) # type: ignore
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 205, in _vformat
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\substitutions.py", line 168, in get_field
+    obj, arg_used = super(Formatter, self).get_field(field_name, args, kwargs)
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 278, in get_field
+KeyError: "'title'"
+
+While running game code:
+  File "game/script.rpy", line 31, in script call
+    call act1_start from act1
+  File "game/act4.rpy", line 20, in script
+    call screen memory_journal
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 28, in execute
+    frame:
+  File "game/game_screens.rpy", line 35, in execute
+    vbox:
+  File "game/game_screens.rpy", line 46, in execute
+    frame:
+  File "game/game_screens.rpy", line 50, in execute
+    vbox:
+  File "game/game_screens.rpy", line 52, in execute
+    for entry in journal_entries:
+  File "game/game_screens.rpy", line 53, in execute
+    if journal_entry_unlocked(entry["id"]):
+  File "game/game_screens.rpy", line 56, in execute
+    text "[entry['title']] — ???" color "#888"
+KeyError: "'title'"
+Resetting cache.
+Bootstrap to the start of init.init took 165.30s
+Early init took 0.00s
+Loader init took 0.05s
+Loading error handling took 0.02s
+Loading script took 0.12s
+Loading save slot metadata. took 0.00s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'D:\\RenPy\\renpy-8.0.3-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.03s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Noah Peñaranda\\AppData\\Roaming/RenPy/backups\\Talinghaga - Mga Kwento ng Kaluluwa':
+Dump and make backups. took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.35s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.06s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1650 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 566.14'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1738, 977) drawable=(1738, 977)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 31, in script call
+    call act1_start from act1
+  File "game/act4.rpy", line 20, in script
+    call screen memory_journal
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\ast.py", line 2232, in execute
+    self.call("execute")
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\exports.py", line 3181, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
+    callback(self)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 462, in per_interact
+    self.update()
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 28, in execute
+    frame:
+  File "game/game_screens.rpy", line 35, in execute
+    vbox:
+  File "game/game_screens.rpy", line 46, in execute
+    frame:
+  File "game/game_screens.rpy", line 50, in execute
+    vbox:
+  File "game/game_screens.rpy", line 52, in execute
+    for entry in journal_entries:
+  File "game/game_screens.rpy", line 53, in execute
+    if journal_entry_unlocked(entry["id"]):
+  File "game/game_screens.rpy", line 56, in execute
+    text "{entry['title']} — ???" color "#888"
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\text\text.py", line 1594, in __init__
+    self.set_text(text, scope, substitute)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\text\text.py", line 1712, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\substitutions.py", line 278, in substitute
+    s = formatter.vformat(s, (), kwargs) # type: ignore
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 205, in _vformat
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\substitutions.py", line 168, in get_field
+    obj, arg_used = super(Formatter, self).get_field(field_name, args, kwargs)
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 270, in get_field
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 227, in get_value
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\substitutions.py", line 236, in __getitem__
+    raise NameError("Name '{}' is not defined.".format(key))
+NameError: Name ''title'' is not defined.
+
+While running game code:
+  File "game/script.rpy", line 31, in script call
+    call act1_start from act1
+  File "game/act4.rpy", line 20, in script
+    call screen memory_journal
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 28, in execute
+    frame:
+  File "game/game_screens.rpy", line 35, in execute
+    vbox:
+  File "game/game_screens.rpy", line 46, in execute
+    frame:
+  File "game/game_screens.rpy", line 50, in execute
+    vbox:
+  File "game/game_screens.rpy", line 52, in execute
+    for entry in journal_entries:
+  File "game/game_screens.rpy", line 53, in execute
+    if journal_entry_unlocked(entry["id"]):
+  File "game/game_screens.rpy", line 56, in execute
+    text "{entry['title']} — ???" color "#888"
+NameError: Name ''title'' is not defined.
+Resetting cache.
+Bootstrap to the start of init.init took 251.88s
+Early init took 0.00s
+Loader init took 0.05s
+Loading error handling took 0.02s
+Loading script took 0.12s
+Loading save slot metadata. took 0.00s
+Loading persistent took 0.00s
+Faled to initialize steam: FileNotFoundError("Could not find module 'D:\\RenPy\\renpy-8.0.3-sdk\\lib\\py3-windows-x86_64\\steam_api64.dll' (or one of its dependencies). Try using the full path with constructor syntax.")
+Running init code took 0.03s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Noah Peñaranda\\AppData\\Roaming/RenPy/backups\\Talinghaga - Mga Kwento ng Kaluluwa':
+Dump and make backups. took 0.04s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.32s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1650 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 566.14'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1736, 976) drawable=(1736, 976)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 31, in script call
+    call act1_start from act1
+  File "game/act4.rpy", line 20, in script
+    call screen memory_journal
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\ast.py", line 2232, in execute
+    self.call("execute")
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\exports.py", line 3181, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
+    callback(self)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 462, in per_interact
+    self.update()
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 28, in execute
+    frame:
+  File "game/game_screens.rpy", line 35, in execute
+    vbox:
+  File "game/game_screens.rpy", line 46, in execute
+    frame:
+  File "game/game_screens.rpy", line 50, in execute
+    vbox:
+  File "game/game_screens.rpy", line 52, in execute
+    for entry in journal_entries:
+  File "game/game_screens.rpy", line 53, in execute
+    if journal_entry_unlocked(entry["id"]):
+  File "game/game_screens.rpy", line 56, in execute
+    text "{entry[\"title\"]} — ???" color "#888"
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\text\text.py", line 1594, in __init__
+    self.set_text(text, scope, substitute)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\text\text.py", line 1712, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\substitutions.py", line 278, in substitute
+    s = formatter.vformat(s, (), kwargs) # type: ignore
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 205, in _vformat
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\substitutions.py", line 168, in get_field
+    obj, arg_used = super(Formatter, self).get_field(field_name, args, kwargs)
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 270, in get_field
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 227, in get_value
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\substitutions.py", line 236, in __getitem__
+    raise NameError("Name '{}' is not defined.".format(key))
+NameError: Name '"title"' is not defined.
+
+While running game code:
+  File "game/script.rpy", line 31, in script call
+    call act1_start from act1
+  File "game/act4.rpy", line 20, in script
+    call screen memory_journal
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 22, in execute
+    screen memory_journal():
+  File "game/game_screens.rpy", line 28, in execute
+    frame:
+  File "game/game_screens.rpy", line 35, in execute
+    vbox:
+  File "game/game_screens.rpy", line 46, in execute
+    frame:
+  File "game/game_screens.rpy", line 50, in execute
+    vbox:
+  File "game/game_screens.rpy", line 52, in execute
+    for entry in journal_entries:
+  File "game/game_screens.rpy", line 53, in execute
+    if journal_entry_unlocked(entry["id"]):
+  File "game/game_screens.rpy", line 56, in execute
+    text "{entry[\"title\"]} — ???" color "#888"
+NameError: Name '"title"' is not defined.
