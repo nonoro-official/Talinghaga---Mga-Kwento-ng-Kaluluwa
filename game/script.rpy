@@ -26,7 +26,15 @@ define slow_fade = Fade(0.5, 0.0, 0.3)  # 3 seconds fade
 label start:
 
     # OPENING PROLOGUE  
-    
+    $ prologue_text = "Sa isang bayan, may dalawang lalaki.\nAng isa’y nababalot sa kayamanan, sagana sa pagkain at aliw.\nAng isa nama’y nababalot sa sugat, gutom, at katahimikan."
+
+    show screen prologue_screen(prologue_text)
+
+    window hide                  # hide dialogue box
+    $ renpy.pause()              # wait for click/input
+    window show                  # show dialogue box again if needed
+
+    hide screen prologue_screen
 
     # Act 1
     call act1_start from act1

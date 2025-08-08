@@ -2,25 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/act1.rpy", line 46: menu statement expects a non-empty block.
-    menu:
-        ^
-
-File "game/act1.rpy", line 47: expected statement.
-    "Patawarin mo sila, Panginoon.":
-                                   ^
-
-File "game/act1.rpy", line 49: expected statement.
-    "Hanggang kailan ang sakit na ito?":
-                                       ^
-
-File "game/act1.rpy", line 51: expected statement.
-    "Bigyan mo pa po ako ng lakas.":
-                                   ^
-
-File "game/act1.rpy", line 53: expected statement.
-    "...":
-         ^
+File "game/game_screens.rpy", line 17: 'max_width' is not a keyword argument or valid child for the frame statement.
+    max_width 700
+             ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Fri Aug  8 19:43:01 2025
+Fri Aug  8 20:56:11 2025
