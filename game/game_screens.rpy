@@ -54,10 +54,7 @@ screen memory_journal():
                             textbutton entry["title"] action [Hide("memory_journal"), Show("journal_entry_viewer", entry=entry)]
                         else:
                             $ title_text = entry["title"]
-                            text "[title_text] — ???" color "#888"
-
-
-
+                            text "???" color "#888"
 
             null height 8
             hbox:
@@ -88,15 +85,6 @@ screen journal_entry_viewer(entry):
                 spacing 8
                 textbutton "Back to Journal" action [Hide("journal_entry_viewer"), Show("memory_journal")]
                 textbutton "Close" action [Hide("journal_entry_viewer"), Return()]
-
-# # Button style for journal entry
-# style journal_entry_button is default:
-#     background Solid("#444")
-#     padding (10, 10)
-#     xminimum 560
-#     hover_background Solid("#666")
-#     color "#fff"
-#     hover_color "#ff0"
 
 label demoend:
     hide window
