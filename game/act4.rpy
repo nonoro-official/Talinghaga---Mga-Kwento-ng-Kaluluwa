@@ -27,4 +27,6 @@ label act4_start:
     scene white with fade
     "Lazarus walks toward the light. Peaceful music swells."
 
+    call screen credits
+
     return

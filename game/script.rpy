@@ -6,7 +6,7 @@ define l = Character("Lazaro")
 default journal_memory = "none"
 
 init python:
-    if not hasattr(persistent, "found_journal"):
+    if not hasattr(persistent, "found_journal") or persistent.found_journal is None:
         persistent.found_journal = []
 
     renpy.music.set_volume(1.0, delay=0, channel='music')
