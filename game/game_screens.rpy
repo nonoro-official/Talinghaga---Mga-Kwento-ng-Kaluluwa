@@ -114,20 +114,4 @@ screen journal_entry_viewer(entry):
 
             key "mouseup_1" action [Hide("journal_entry_viewer"), Show("memory_journal")]
 
-
-label demoend:
-    hide window
-    show screen tbc with fade
-    pause
-
-    show screen demothx with fade
-    pause
-
-    show screen credits with fade
-    pause
-
-    hide screen tbc 
-    hide screen demothx 
-    hide screen credits with fade
-    
     return

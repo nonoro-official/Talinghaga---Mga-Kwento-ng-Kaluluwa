@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "Talinghaga: Mga Kwento ng Kaluluwa"
+define build.name = "Talinghaga_Mga_Kwento_ng_Kaluluwa"
 
 
 ## Sounds and music ############################################################
