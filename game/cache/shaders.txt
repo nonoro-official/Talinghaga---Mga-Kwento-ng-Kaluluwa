@@ -1,12 +1,12 @@
-renpy.dissolve renpy.geometry
 renpy.geometry renpy.solid
-=======
-renpy.dissolve renpy.dissolve
-renpy.geometry renpy.texture
-renpy.alpha renpy.texture
->>>>>>> noah-branch
-renpy.solid
-<<<<<<< HEAD
 renpy.ftl
-renpy.texture
 renpy.alpha renpy.geometry renpy.texture
+renpy.alpha renpy.texture
+<<<<<<< HEAD
+renpy.texture
+renpy.geometry renpy.texture
+>>>>>>> noah-branch
+=======
+renpy.dissolve renpy.geometry
+renpy.dissolve renpy.dissolve
+renpy.solid

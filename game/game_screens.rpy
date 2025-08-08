@@ -83,7 +83,7 @@ screen memory_journal():
 screen journal_entry_viewer(entry):
     tag menu
     modal True
-    # dark background so CG stands out
+
     add Solid("#000C")
 
     frame:
@@ -92,8 +92,12 @@ screen journal_entry_viewer(entry):
         xalign 0.5
         yalign 0.5
         xmaximum 900
+        ymaximum 700
         vbox:
             spacing 10
+            xalign 0.5
+            yalign 0.5
+
             text entry["title"] size 30 color "#fff" xalign 0.5
             null height 6
             if entry["image"]:
@@ -101,8 +105,11 @@ screen journal_entry_viewer(entry):
             null height 8
             hbox:
                 spacing 8
-                textbutton "Back to Journal" action [Hide("journal_entry_viewer"), Show("memory_journal")]
-                textbutton "Close" action [Hide("journal_entry_viewer"), Return()]
+                xalign 0.5
+                textbutton "Back to Journal" action [Hide("journal_entry_viewer", transition=Fade(0.5)), Show("memory_journal", transition=Fade(0.5))]
+                textbutton "Close" action Hide("journal_entry_viewer", transition=Fade(0.5))
+        
+            key "mouseup_1" action [Hide("journal_entry_viewer"), Show("memory_journal")]
 
 label demoend:
     hide window

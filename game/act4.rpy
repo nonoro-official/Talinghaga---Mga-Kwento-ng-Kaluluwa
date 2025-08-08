@@ -15,7 +15,6 @@ label act4_start:
     a "Bilang gantimpala sa iyong pananampalataya at pagtitiis, ikaw ay dadalhin sa kapahingahan."
     a "Ngunit alalahanin mo ang iyong landas, upang ito’y maging liwanag sa iba."
 
-    "Bubukas ang Memory Journal..."
     call screen memory_journal
 
     # Final Reflection
