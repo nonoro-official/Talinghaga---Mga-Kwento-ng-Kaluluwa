@@ -2,11 +2,15 @@
 image donmarciano desperate = "images/characters/richman/desperate.png"
 image lazarus distressed = "images/characters/lazarus/distressed.png"
 
+image bg lazarusdeath = "images/cg/lazarusdeathcg.png"
+image bg richmanor = "images/bg/richmanor.png"
+image bg hell = "images/bg/hell.png"
+
 # ACT 2 START
 label act2_start:
 
     # Scene 1: Lazarus’s Final Breath
-    scene black with slow_fade
+    scene bg streetdark with slow_fade
     play sound "audio/act2/act2_coldwind.ogg"
 
     show lazarus distressed with dissolve
@@ -18,6 +22,7 @@ label act2_start:
     play music "audio/act2/act2_angelchoirmusic.ogg"
     pause 2
     hide lazarus with dissolve
+    show bg lazarusdeath with dissolve
 
     "{i}At siya'y kinuha ng mga anghel at dinala sa piling ni Abraham.{/i}"
 
@@ -33,6 +38,7 @@ label act2_start:
     play sound "audio/act2/act2_heartbeat.ogg"
     pause 2
 
+    show bg richmanor with dissolve
     show donmarciano shocked with dissolve
     d "Anong... anong nangyayari? Hindi... hindi ako pwedeng mamatay ngayon!"
 
@@ -49,6 +55,7 @@ label act2_start:
     play sound "audio/act2/act2_scaryambience.ogg"
     pause 2
 
+    show bg hell with dissolve
     show donmarciano desperate with dissolve
     d "Ama Abraham! Mahabag ka sa akin!"
     d "Ipadala mo si Lazaro upang isawsaw ang dulo ng kanyang daliri sa tubig at palamigin ang aking dila!"

@@ -9,11 +9,14 @@ image donmarciano neutral = "images/characters/richman/neutral.png"
 image lazarus distressed = "images/characters/lazarus/distressed.png"
 image lazarus neutral = "images/characters/lazarus/neutral.png"
 
+image bg richdining = "images/bg/richdining.png"
+image bg streetdark = "images/bg/streetdark.png"
+
 # ACT 1 START
 label act1_start:
 
     # Scene 1: Inside the Mansion (Don Marciano POV)
-    scene black
+    scene bg richdining with dissolve
     play music "audio/act1/act1_richpeoplemusic.ogg"
     play sound "audio/act1/act1_dinneratmosphere.ogg"
 
@@ -30,7 +33,7 @@ label act1_start:
     d "Ayokong marinig ang kanyang ungol. Sabihan mo siyang lumayo sa pinto ko."
 
     stop music fadeout 1.5
-    scene black with slow_fade
+    scene bg streetdark with slow_fade
 
     # Scene 2: Outside the Gate (Lazaro POV)
     play music "audio/act1/act1_sadmusic.ogg"
