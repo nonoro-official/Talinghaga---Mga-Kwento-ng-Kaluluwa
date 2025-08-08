@@ -63,6 +63,8 @@ define config.has_voice = True
 ## game, until it is stopped or another file is played.
 
 # define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "audio/prologue/prologue_pianobgm.ogg"
+define config.main_menu_music_fadein = 1.0
 
 
 ## Transitions #################################################################
