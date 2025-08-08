@@ -1,9 +1,9 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <renpy.display.im.Image object ('images/memories/faith_cg.png') at 0x00000000059de520>:
+While loading <renpy.display.im.Image object ('images/memories/faith_cg.png') at 0x0000000005a91250>:
   File "game/script.rpy", line 40, in script call
     call act1_start from act1
-  File "game/act4.rpy", line 20, in script
+  File "game/act4.rpy", line 17, in script
     call screen memory_journal
   File "renpy/common/000statements.rpy", line 609, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
@@ -14,7 +14,7 @@ OSError: Couldn't find file 'images/memories/faith_cg.png'.
 Full traceback:
   File "game/script.rpy", line 40, in script call
     call act1_start from act1
-  File "game/act4.rpy", line 20, in script
+  File "game/act4.rpy", line 17, in script
     call screen memory_journal
   File "D:\RenPy\renpy-8.0.3-sdk\renpy\ast.py", line 2232, in execute
     self.call("execute")
@@ -83,4 +83,4 @@ OSError: Couldn't find file 'images/memories/faith_cg.png'.
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.0.3.22090809
 Talinghaga: Mga Kwento ng Kaluluwa 1.0
-Fri Aug  8 21:03:31 2025
+Fri Aug  8 21:30:20 2025

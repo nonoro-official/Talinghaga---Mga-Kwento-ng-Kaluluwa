@@ -9,9 +9,9 @@ screen credits:
     key "K_RETURN" action Return()
 
 style prologue_text_style:
-    color "#000000"   # your desired color 
-    size 40           # font size in pixels
-    # You can add font, bold, italics etc if you want
+    color "#000000"   
+    size 60         
+    font "fonts/EFCO Brookshire Regular.ttf"
 
 screen prologue_screen(prologue_text):
 
