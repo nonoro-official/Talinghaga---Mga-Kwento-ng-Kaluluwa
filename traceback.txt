@@ -1,36 +1,18 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 31, in script call
+While loading <renpy.display.im.Image object ('images/memories/sickness_cg.png') at 0x0000000005911220>:
+  File "game/script.rpy", line 32, in script call
     call act1_start from act1
   File "game/act4.rpy", line 20, in script
     call screen memory_journal
   File "renpy/common/000statements.rpy", line 609, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/game_screens.rpy", line 22, in execute
-    screen memory_journal():
-  File "game/game_screens.rpy", line 22, in execute
-    screen memory_journal():
-  File "game/game_screens.rpy", line 28, in execute
-    frame:
-  File "game/game_screens.rpy", line 35, in execute
-    vbox:
-  File "game/game_screens.rpy", line 46, in execute
-    frame:
-  File "game/game_screens.rpy", line 50, in execute
-    vbox:
-  File "game/game_screens.rpy", line 52, in execute
-    for entry in journal_entries:
-  File "game/game_screens.rpy", line 53, in execute
-    if journal_entry_unlocked(entry["id"]):
-  File "game/game_screens.rpy", line 56, in execute
-    text "{entry[\"title\"]} — ???" color "#888"
-NameError: Name '"title"' is not defined.
+OSError: Couldn't find file 'images/memories/sickness_cg.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 31, in script call
+  File "game/script.rpy", line 32, in script call
     call act1_start from act1
   File "game/act4.rpy", line 20, in script
     call screen memory_journal
@@ -48,57 +30,57 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
-    callback(self)
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 462, in per_interact
-    self.update()
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
-    self.screen.function(**self.scope)
-  File "game/game_screens.rpy", line 22, in execute
-    screen memory_journal():
-  File "game/game_screens.rpy", line 22, in execute
-    screen memory_journal():
-  File "game/game_screens.rpy", line 28, in execute
-    frame:
-  File "game/game_screens.rpy", line 35, in execute
-    vbox:
-  File "game/game_screens.rpy", line 46, in execute
-    frame:
-  File "game/game_screens.rpy", line 50, in execute
-    vbox:
-  File "game/game_screens.rpy", line 52, in execute
-    for entry in journal_entries:
-  File "game/game_screens.rpy", line 53, in execute
-    if journal_entry_unlocked(entry["id"]):
-  File "game/game_screens.rpy", line 56, in execute
-    text "{entry[\"title\"]} — ???" color "#888"
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\text\text.py", line 1594, in __init__
-    self.set_text(text, scope, substitute)
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\text\text.py", line 1712, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\substitutions.py", line 278, in substitute
-    s = formatter.vformat(s, (), kwargs) # type: ignore
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 205, in _vformat
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\substitutions.py", line 168, in get_field
-    obj, arg_used = super(Formatter, self).get_field(field_name, args, kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 270, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 227, in get_value
-  File "D:\RenPy\renpy-8.0.3-sdk\renpy\substitutions.py", line 236, in __getitem__
-    raise NameError("Name '{}' is not defined.".format(key))
-NameError: Name '"title"' is not defined.
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 3912, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\core.py", line 2602, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 495, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\screen.py", line 704, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\layout.py", line 1334, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\layout.py", line 1105, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\transform.py", line 747, in render
+    return transform_render(self, width, height, st, at)
+  File "accelerator.pyx", line 187, in renpy.display.accelerator.transform_render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\im.py", line 627, in render
+    return cache.get(self, render=True)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\im.py", line 295, in get
+    surf = image.load()
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\im.py", line 720, in load
+    raise e
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\display\im.py", line 685, in load
+    filelike = renpy.loader.load(self.filename)
+  File "D:\RenPy\renpy-8.0.3-sdk\renpy\loader.py", line 820, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'images/memories/sickness_cg.png'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.0.3.22090809
 Talinghaga: Mga Kwento ng Kaluluwa 1.0
-Fri Aug  8 19:50:31 2025
+Fri Aug  8 20:06:55 2025
