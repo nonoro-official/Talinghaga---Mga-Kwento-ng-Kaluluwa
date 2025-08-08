@@ -1,14 +1,32 @@
-screen tbc:
-    add "screens/tbc.png"
-
-screen wiproute:
-    add "screens/wip-route.png"
-
-screen demothx:
-    add "screens/demo-thx.png"
-
 screen credits:
     add "screens/credits.png"
+
+    # Clicking anywhere hides the screen and returns control
+    key "mouseup_1" action Return()
+
+    # Also allow pressing ESC or Enter to close
+    key "K_ESCAPE" action Return()
+    key "K_RETURN" action Return()
+
+style prologue_text_style:
+    color "#000000"   # your desired color 
+    size 40           # font size in pixels
+    # You can add font, bold, italics etc if you want
+
+screen prologue_screen(prologue_text):
+
+    # Scroll background, centered and scaled nicely
+    add "screens/prologue.png" at truecenter
+
+    # The text box on top of the scroll with typing effect
+    frame:
+        background None
+        xalign 0.5
+        yalign 0.5
+        padding (50, 50)
+
+        text prologue_text slow_cps 30:
+            style "prologue_text_style"
 
 # Journal entries data
 default journal_entries = [

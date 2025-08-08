@@ -24,8 +24,11 @@ label act4_start:
     l "Sa sakit, hindi ko isinuko ang aking kaluluwa."
     l "Ngayo’y ako’y nasa kapahingahan... at ang Panginoon ay tapat."
 
-    scene white with fade
-    "Lazarus walks toward the light. Peaceful music swells."
+    # Fade to white WITHOUT dialogue box visible
+    window hide
+
+    # Optionally add a short pause so the fade is noticeable before credits
+    pause 
 
     call screen credits
 
