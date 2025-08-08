@@ -29,6 +29,7 @@ label act2_start:
     stop music fadeout 2.0
     scene black with fade
     pause 1
+    window hide
 
     # Scene 2: The Rich Man’s Sudden Death
     play sound "audio/act2/act2_grouplaughing.ogg"
@@ -48,6 +49,7 @@ label act2_start:
 
     "{i}At ang mayamang lalaki'y namatay rin, at siya'y inilibing.{/i}"
 
+    window hide
     scene black with fade
     pause 1
 

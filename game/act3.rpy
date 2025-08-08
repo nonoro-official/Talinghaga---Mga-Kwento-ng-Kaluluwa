@@ -79,4 +79,6 @@ label act3_start:
     play sound "audio/act3/act3_intensefiresound.ogg"
     pause 2
 
+    window hide
+
     jump act4_start

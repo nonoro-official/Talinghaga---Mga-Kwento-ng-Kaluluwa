@@ -33,7 +33,6 @@ label start:
 
     window hide                  # hide dialogue box
     $ renpy.pause()              # wait for click/input
-    window show                  # show dialogue box again if needed
 
     hide screen prologue_screen
     stop music fadeout 1.5

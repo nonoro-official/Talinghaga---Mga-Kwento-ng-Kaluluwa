@@ -66,4 +66,6 @@ label act1_start:
     "{i}At araw-araw, sila'y nagkikita... ngunit kailanman, hindi sila nagtagpo.{/i}"
     "{i}Ngunit darating ang araw — ang huling araw — na babaligtad ang mundo.{/i}"
 
+    window hide
+
     jump act2_start
